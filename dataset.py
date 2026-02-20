@@ -46,6 +46,7 @@ class USDataset(torch.utils.data.Dataset):
         return len(self.data)
 
     def __getitem__(self, idx):
-        pics_a, pics_e, pics_k = get_pic_pair(self.data[idx], self.transform, self.mode)
+        pics_a, pics_e, pics_k = get_pic_pair(self.data[idx], self.transform)
+
 
         return pics_a, pics_e, pics_k, self.label[idx]
